@@ -1,0 +1,169 @@
+/* 基本設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
+  color: #444;
+}
+html, body, main {
+  height: 100%;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+h2 {
+  text-align: center;
+  color: #d7003a;
+}
+h2::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 50px;
+  margin: 20px auto;
+  background-color: #ccc;
+}
+
+a:hover {
+  color: #d7003a;
+}
+
+dt {
+  font-weight: bold;
+}
+dt, dd {
+  max-width: 100%;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #d7003a;
+}
+
+.profile, .skills, .messages {
+  margin: 100px auto;
+  width: 960px;
+  max-width: 92%;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 4px #888;
+}
+
+/* ファーストビュー */
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  padding: 24px;
+}
+
+.top::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  border: 2px solid #444;
+}
+
+.circle1, .circle2 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #d7003a;
+  z-index: -1;
+} 
+.circle1 {
+  clip-path: circle(20% at 90% 10%);
+}
+.circle2 {
+  clip-path: circle(10% at 10% 90%);
+}
+
+/* プロフィール */
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 50px 0;
+}
+.profile img {
+  width: 360px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.profile dl {
+  margin: 0 auto;
+}
+.profile dl div {
+  margin: 30px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 知識・技能 */
+.skills {
+  padding: 50px 0;
+}
+
+.skills dl {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 50px 0;
+  width: 90%;
+  margin: 50px auto;
+}
+
+.skills dt {
+  grid-column: 1;
+}
+.skills dd {
+  grid-column: 2;
+}
+.skills div {
+  display: grid;
+  gap: 30px 0;
+}
+.skills div dd {
+  grid-column: 1;
+}
+
+/* メッセージ */
+.messages {
+  padding: 20px;
+}
+
+/* 一番下に余白を設ける */
+main::after {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-top: -1px;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .profile {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .skills dl {
+    display: block;
+    margin: 0 auto 42px;
+  }
+  .skills dt {
+    margin: 50px 0 8px;
+  }
+  .skills dd {
+    margin: 8px 0;
+  }
+  
+}
