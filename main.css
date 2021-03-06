@@ -45,6 +45,7 @@ h3 {
 
 /* ファーストビュー */
 .top {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
