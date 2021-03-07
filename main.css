@@ -70,7 +70,7 @@ h1 span {
 }
 
 .circle1, .circle2 {
-  position: fixed;
+  position: absolute;
   background-color: #d7003a;
   z-index: -2;
   border-radius: 50%;
