@@ -1,0 +1,171 @@
+/* 基本設定 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", sans-serif;
+  color: #444;
+  letter-spacing: 0.04em;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #fbfbfb;
+}
+
+.prf_wrap, .skills dl, .msg_wrap {
+  width: 960px;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+h2, h3 {
+  font-weight: 600;
+}
+h2 {
+  font-size: 1.75rem;
+  color: #d7003a;
+  text-align: center;
+}
+h2::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 50px;
+  margin: 20px auto;
+  background-color: #bbb;
+}
+
+a:hover {
+  color: #d7003a;
+}
+
+dt {
+  font-weight: bold;
+}
+dt, dd {
+  max-width: 100%;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+/*ファーストビュー*/
+.top {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.circle1 {
+  position: absolute;
+  background-color: rgba(215, 0, 58, 0.7);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  z-index: -1;
+  top: -120px;
+  left: -100px;
+}
+
+/* プロフィール */
+.profile {
+  padding: 100px 0;
+}
+
+.prf_wrap {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr, 1fr;
+  align-items: center;
+}
+.prf_wrap img {
+  grid-column: 1;
+  width: 320px;
+  max-width: 80vw;
+  margin: 0 auto;
+  box-shadow: 10px 10px #444;
+}
+.prf_wrap dl {
+  grid-column: 2;
+}
+.prf_wrap dl div {
+  margin: 25px auto;
+}
+.prf_wrap dt {
+  margin: 0 0 5px;
+}
+
+/* 知識・技能 */
+.skills {
+  padding: 50px 0;
+}
+
+.skills dl {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 50px 0;
+  margin: 50px auto 0;
+}
+
+.skills dt {
+  grid-column: 1;
+}
+.skills dd {
+  grid-column: 2;
+}
+.skills div dd {
+  margin: 0 0 30px;
+}
+
+/* メッセージ */
+.messages {
+  padding: 50px 0 100px;
+}
+
+.msg_wrap {
+  margin: 60px auto;
+}
+.msg_wrap p {
+  text-align: justify;
+  margin: 1em 0;
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  .prf_wrap {
+    grid-template-columns: 1fr;
+  }
+  .prf_wrap dl {
+    grid-column: 1;
+    margin: 0 auto;
+  }
+
+  .prf_wrap dl div {
+    margin: 30px 0;
+  }
+
+  .skills dl {
+    display: block;
+    margin: 0 auto 42px;
+  }
+  .skills dt {
+    margin: 50px 0 8px;
+  }
+  .skills dd {
+    margin: 8px 0;
+  }
+  
+}
