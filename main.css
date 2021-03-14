@@ -2,37 +2,37 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: 'Yu Gothic Medium', '游ゴシック Medium', YuGothic, '游ゴシック体', 'Hiragino Kaku Gothic ProN', sans-serif;
   color: #444;
-  letter-spacing: 0.04em;
+  letter-spacing: .04em;
 }
 html, body {
   height: 100%;
 }
 
-.prf-wrap, .skills dl, .msg-wrap {
-  width: 960px;
-  max-width: 85%;
+.prf-wrap, .skl-dl, .msg-wrap {
   margin: 0 auto;
+  max-width: 85%;
+  width: 960px;
 }
 
 h2, h3, dt {
-  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: 'Yu Gothic', '游ゴシック', YuGothic, '游ゴシック体', 'Hiragino Kaku Gothic ProN', sans-serif;
   font-weight: 600;
 }
 
 h2 {
-  font-size: 1.75rem;
   color: #d7003a;
+  font-size: 1.75rem;
   text-align: center;
 }
 h2::after {
+  background-color: #aaa;
   content: '';
   display: block;
+  margin: 20px auto;
   height: 2px;
   width: 50px;
-  margin: 20px auto;
-  background-color: #aaa;
 }
 
 a:hover {
@@ -47,8 +47,8 @@ dt, dd {
 }
 
 h3 {
-  font-size: 1.125rem;
   color: #555;
+  font-size: 1.125rem;
 }
 
 /*ファーストビュー*/
@@ -81,29 +81,32 @@ h1 {
 /* プロフィール */
 .profile {
   padding: 0 0 80px;
-  animation: fade-in-up 0.8s;
+  animation: fade-in-up .8s;
 }
 
 .prf-wrap {
   display: grid;
+  display: -ms-grid;
   gap: 50px;
-  grid-template-columns: 1fr, 1fr;
+  -ms-grid-columns: 1fr 50px 1fr;
   align-items: center;
 }
-.prf-wrap img {
+.prf-img {
   grid-column: 1;
+  -ms-grid-column: 1;
   width: 320px;
   max-width: 80vw;
   margin: 0 auto;
   box-shadow: 10px 10px #444;
 }
-.prf-wrap dl {
+.prf-dl {
   grid-column: 2;
+  -ms-grid-column: 3;
 }
-.prf-wrap dl div {
+.prf-dl > div {
   margin: 25px auto;
 }
-.prf-wrap dt {
+.prf-dl dt {
   margin: 0 0 5px;
 }
 
@@ -112,20 +115,20 @@ h1 {
   padding: 50px 0;
 }
 
-.skills dl {
+.skl-dl {
   display: grid;
   grid-template-columns: 20% 80%;
   gap: 50px 0;
   margin: 50px auto 0;
 }
 
-.skills dt {
+.skl-dl > dt {
   grid-column: 1;
 }
-.skills dd {
+.skl-dl > dd {
   grid-column: 2;
 }
-.skills div dd {
+.skl-dl > div > dd {
   margin: 0 0 30px;
 }
 
@@ -135,7 +138,7 @@ h1 {
 }
 
 .msg-wrap {
-  margin: 60px auto;
+  margin: 50px auto 70px;
 }
 .msg-wrap p {
   text-align: justify;
@@ -146,12 +149,13 @@ h1 {
 .fade {
   opacity: 0;
   transform: translateY(50px);
-  transition: all 0.8s;
+  transition: all .8s;
 }
 .scroll-in {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 @media screen and (max-width: 767px) {
   h1 {
@@ -161,23 +165,22 @@ h1 {
   .prf-wrap {
     grid-template-columns: 1fr;
   }
-  .prf-wrap dl {
+  .prf-dl {
     grid-column: 1;
     margin: 0 auto;
   }
-
-  .prf-wrap dl div {
+  .prf-dl > div {
     margin: 30px 0;
   }
 
-  .skills dl {
+  .skl-dl {
     display: block;
     margin: 0 auto 42px;
   }
-  .skills dt {
+  .skl-dl > dt {
     margin: 50px 0 8px;
   }
-  .skills dd {
+  .skl-dl > dd {
     margin: 8px 0;
   }
 }
@@ -198,5 +201,25 @@ h1 {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+/*IE用*/
+@media all and (-ms-high-contrast: none) {
+  .fade {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .skl-dl {
+    display: block;
+    margin: 0 auto 42px;
+  }
+  .skl-dl > dt {
+    margin: 50px 0 8px;
+  }
+  .skl-dl > dd {
+    margin: 8px 0;
   }
 }
