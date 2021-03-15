@@ -161,6 +161,9 @@ h1 {
   h1 {
     font-size: 1.35rem;
   }
+  h2 {
+    font-size: 1.5rem;
+  }
 
   .prf-wrap {
     grid-template-columns: 1fr;
